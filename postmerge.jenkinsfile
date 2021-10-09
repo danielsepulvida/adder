@@ -45,7 +45,7 @@ pipeline {
                 }
             }
             steps {
-                sh '''
+                sh """
                     export version_s=$(cat version_f)
 
                     ./package.sh \${version_s}
@@ -55,7 +55,7 @@ pipeline {
                     export HOME=${WORKSPACE}
                     cat docker-password | docker login --username ${DOCKER_USR} --password-stdin
                     docker push calvinpark/adder:${version_g}
-                '''
+                """
             }
         }
         stage('Push git tag') {
