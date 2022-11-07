@@ -20,6 +20,4 @@ pipeline {
                 sh 'python3 -m unittest adder.py'
             }
         }
-    }
 }
-
