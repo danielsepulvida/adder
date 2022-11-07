@@ -1,10 +1,11 @@
 pipeline {
     agent {
-        dockerfile {
+        docker {
             label 'docker'
             label 'python:3'
         }
     }
+    stages {
         stage('Compile') {
             steps {
                 sh 'python3 -m compileall adder.py'
@@ -20,4 +21,5 @@ pipeline {
                 sh 'python3 -m unittest adder.py'
             }
         }
+   }
 }
