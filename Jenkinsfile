@@ -20,7 +20,14 @@ pipeline {
             steps {
                 sh '''python3 -m pytest -v --junitxml=junit.xml --cov-report xml --cov  adder.py'
                 '''
+	     }
+	}
+	stage('Hello Github') {
+	    steps {
+		echo "Hello Github!"
+		
             }
+	}
    post {
 	always {
 	    junit 'junit.xml'
