@@ -8,4 +8,3 @@ RUN apt-get -qq update && apt-get -qq -y install \
 RUN pip3 install \
     pytest \
     pytest-cov
-
